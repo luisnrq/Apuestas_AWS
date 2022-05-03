@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Apuestas_AWS.Models.Equipo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Equipos</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEquipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Champions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Web)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEquipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                <img src="@item.Imagen" style="width:150px;height:150px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Champions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Web)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                <a asp-controller="Equipos" asp-action="Jugadores" asp-route-idequipo="@item.IdEquipo">Jugadores</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

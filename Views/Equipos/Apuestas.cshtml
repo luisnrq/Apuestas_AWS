@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Apuestas_AWS.Models.Apuesta>
+
+@{
+    ViewData["Title"] = "Apuestas";
+}
+
+<h1>Apuestas</h1>
+
+<p>
+    <a asp-action="CreateApuesta">Crear apuesta</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdApuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEquipoLocal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEquipoVisitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GolesEquipoLocal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GolesEquipoVisitante)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdApuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEquipoLocal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEquipoVisitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GolesEquipoLocal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GolesEquipoVisitante)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Apuestas_AWS.Models.Jugador>
+
+@{
+    ViewData["Title"] = "Jugadores";
+}
+
+<h1>Jugadores</h1>
+
+<p>
+    <a asp-action="Create">Añadir Nuevo</a> |
+    <a asp-action="Index">Volver</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdJugador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEquipo)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdJugador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Posicion)
+            </td>
+            <td>
+                <img src="https://examen-apuestas-luis-e.s3.amazonaws.com/@item.Imagen" style="width:150px;height:150px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEquipo)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

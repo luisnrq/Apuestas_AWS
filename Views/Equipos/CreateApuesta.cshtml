@@ -1,0 +1,53 @@
+﻿@model Apuestas_AWS.Models.Apuesta
+
+@{
+    ViewData["Title"] = "CreateApuesta";
+}
+
+<h1>Crear Apuesta</h1>
+
+<h4>Apuesta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateApuesta">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Usuario" class="control-label"></label>
+                <input asp-for="Usuario" class="form-control" />
+                <span asp-validation-for="Usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEquipoLocal" class="control-label"></label>
+                <input asp-for="IdEquipoLocal" class="form-control" />
+                <span asp-validation-for="IdEquipoLocal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEquipoVisitante" class="control-label"></label>
+                <input asp-for="IdEquipoVisitante" class="form-control" />
+                <span asp-validation-for="IdEquipoVisitante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GolesEquipoLocal" class="control-label"></label>
+                <input asp-for="GolesEquipoLocal" class="form-control" />
+                <span asp-validation-for="GolesEquipoLocal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GolesEquipoVisitante" class="control-label"></label>
+                <input asp-for="GolesEquipoVisitante" class="form-control" />
+                <span asp-validation-for="GolesEquipoVisitante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Apuestas">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
