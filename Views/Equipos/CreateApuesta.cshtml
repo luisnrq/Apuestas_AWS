@@ -18,6 +18,21 @@
                 <span asp-validation-for="Usuario" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label for="IdEquipoLocal" class="control-label">Equipo Local</label>
+                <select name="IdEquipoLocal" class="form-control">
+                    <option value="1">Real Madrid</option>
+                    <option value="2">Manchester City</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="IdEquipoVisitante" class="control-label">Equipo Visitante</label>
+                <select name="IdEquipoVisitante" class="form-control">
+                    <option value="1">Real Madrid</option>
+                    <option value="2">Manchester City</option>
+                </select>
+            </div>
+            <!--
+            <div class="form-group">
                 <label asp-for="IdEquipoLocal" class="control-label"></label>
                 <input asp-for="IdEquipoLocal" class="form-control" />
                 <span asp-validation-for="IdEquipoLocal" class="text-danger"></span>
@@ -27,6 +42,7 @@
                 <input asp-for="IdEquipoVisitante" class="form-control" />
                 <span asp-validation-for="IdEquipoVisitante" class="text-danger"></span>
             </div>
+            -->
             <div class="form-group">
                 <label asp-for="GolesEquipoLocal" class="control-label"></label>
                 <input asp-for="GolesEquipoLocal" class="form-control" />
